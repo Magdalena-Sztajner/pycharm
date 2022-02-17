@@ -59,3 +59,15 @@ if waga_elementu < 1:
 
 if waga_elementu > 10 and waga_elementu != 404:
     print("BŁĄD! Element za ciężki\nPrzerywam pracę")
+
+print()
+
+szablon_podsumowania = ("Ilość wysłanych paczek to: {} szt."
+                        "\nRazem wysłano: {} kg \nŁącznie puste kg: {} kg"
+                        "\nNajwięcej pustych kg w paczce to: {} kg"
+                        "\nNajwięcej pustych kg miała paczka nr: {}")
+
+podsumowanie = szablon_podsumowania.format(wyslane_paczki, razem_kg, suma_pustych_kg, max_pustych_kg, nr_paczki)
+print(podsumowanie)
+
+print()
