@@ -8,6 +8,7 @@ razem_kg = 0
 max_pustych_kg = 0
 nr_paczki = 0
 
+
 while waga_elementu and waga_elementu <= 10:
 
     waga_paczki += waga_elementu
@@ -26,8 +27,6 @@ while waga_elementu and waga_elementu <= 10:
         waga_paczki = 0
         waga_ostatniego_elementu = 0
 
-    waga_elementu = int(input())
-
     else:
         print("Maksymalna waga paczki przekroczona! Odejmuję element i wysyłam")
         waga_paczki -= waga_elementu
@@ -37,6 +36,9 @@ while waga_elementu and waga_elementu <= 10:
         razem_kg += waga_paczki
         waga_paczki = waga_elementu
         waga_ostatniego_elementu = waga_elementu
+
+    waga_elementu = int(input())
+
 
     # wysłanie ostatniego elementu/elementów, (jeżeli nie było błędu wszystkie elementy muszą zostać wysłane)
     # dodane 404 by pozbyć się błędu "EOFError: EOF when reading a line"
