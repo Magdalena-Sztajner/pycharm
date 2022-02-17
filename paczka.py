@@ -51,3 +51,11 @@ while waga_elementu and waga_elementu <= 10:
     if puste_kg > max_pustych_kg:
         max_pustych_kg = puste_kg
         nr_paczki = wyslane_paczki
+
+print()
+
+if waga_elementu < 1:
+    print("BŁĄD! Element waży za mało\nPrzerywam pracę")
+
+if waga_elementu > 10 and waga_elementu != 404:
+    print("BŁĄD! Element za ciężki\nPrzerywam pracę")
