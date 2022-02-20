@@ -12,3 +12,6 @@ while wybrana_liczba != 1:
       else:
             wybrana_liczba = 3 * wybrana_liczba + 1
             dlugosc_ciagu += 1
+print(wybrana_liczba)
+
+print(f"Wybrana liczba: {liczba_poczatkowa}. Długość ciągu to: {dlugosc_ciagu}")
