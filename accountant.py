@@ -27,3 +27,32 @@ while True:
 
         historia.append(hist_tmp)
         hist_tmp = []
+
+    elif akcja == "zakup":
+        produkt_zakup = input()
+        cena_zakupu = int(input())
+        szt_zakup = int(input())
+
+        hist_tmp.append(akcja)
+        hist_tmp.append(produkt_zakup)
+        hist_tmp.append(cena_zakupu)
+        hist_tmp.append(szt_zakup)
+
+        saldo = saldo - (cena_zakupu * szt_zakup)
+
+        if saldo < 0:
+            print()
+            print("Nie można dokonać zakupu!" "\nZa mało pieniędy na koncie!")
+            print()
+            exit()
+
+        historia.append(hist_tmp)
+        hist_tmp = []
+
+        if produkt_zakup not in magazyn:
+            magazyn[produkt_zakup] = szt_zakup
+        else:
+            x = magazyn[produkt_zakup]
+            ilosc_szt = x + szt_zakup
+            magazyn[produkt_zakup] = ilosc_szt
+
