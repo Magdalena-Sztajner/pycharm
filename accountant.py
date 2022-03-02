@@ -128,3 +128,57 @@ if sys.argv[1] == "magazyn":
     print("Magazyn: ", end="")
     for produkt in sys.argv[2:]:
         print(f"{produkt} {magazyn.get(produkt, 0)} szt., ", end="")
+
+
+if sys.argv[1] == "przeglad":
+    przeglad_od = int(sys.argv[2])
+    try:
+        przeglad_do = int(sys.argv[3])
+        print()
+        print("Przeglad historii:", historia[przeglad_od:przeglad_do])
+        print()
+    except:
+        print()
+        print("Przeglad historii:", historia[przeglad_od])
+        print()
+
+if sys.argv[1] == "saldo":
+    kwota = int(sys.argv[2])
+    komentarz = sys.argv[3]
+
+    hist_tmp.append(sys.argv[1])
+    hist_tmp.append(kwota)
+    hist_tmp.append(komentarz)
+
+    historia.append(hist_tmp)
+    hist_tmp = []
+
+    saldo += kwota
+
+if sys.argv[1] == "zakup":
+    produkt_zakup = sys.argv[2]
+    cena_zakupu = int(sys.argv[3])
+    szt_zakup = int(sys.argv[4])
+
+    hist_tmp.append(sys.argv[1])
+    hist_tmp.append(produkt_zakup)
+    hist_tmp.append(cena_zakupu)
+    hist_tmp.append(szt_zakup)
+
+    historia.append(hist_tmp)
+    hist_tmp = []
+
+    saldo = saldo - (cena_zakupu *szt_zakup)
+    if saldo < 0:
+        print()
+        print("Nie można dokonać zakupu!" "\nZa mało pieniędy na koncie!")
+        print()
+        exit()
+
+    if produkt_zakup not in magazyn:
+        magazyn[produkt_zakup] = szt_zakup
+    else:
+        x = magazyn[produkt_zakup]
+        ilosc_szt = x + szt_zakup
+        magazyn[produkt_zakup] = ilosc_szt
+
