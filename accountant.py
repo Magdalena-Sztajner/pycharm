@@ -110,3 +110,21 @@ while True:
 #
 # print("Magazyn:", magazyn)
 
+import sys
+
+if sys.argv[1] not in ["konto", "magazyn", "przeglad",
+                       "saldo", "zakup", "sprzedaz"]:
+    print()
+    print("Niedozwolona akcja!")
+    print()
+    exit()
+
+if sys.argv[1] == "konto":
+    print()
+    print("Konto:", saldo)
+
+if sys.argv[1] == "magazyn":
+    print()
+    print("Magazyn: ", end="")
+    for produkt in sys.argv[2:]:
+        print(f"{produkt} {magazyn.get(produkt, 0)} szt., ", end="")
