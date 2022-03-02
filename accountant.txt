@@ -1,0 +1,31 @@
+saldo
+1000000
+wplata poczatkowa
+saldo
+-140000
+zus
+zakup
+raspberry
+15000
+5
+sprzedaz
+raspberry
+25000
+5
+stop
+
+
+
+
+
+
+
+
+
+
+a) python accountant.py saldo <int wartosc> <str komentarz>
+b) python accountant.py sprzedaż <str identyfikator produktu> <int cena> <int liczba sprzedanych>
+c) python accountant.py zakup <str identyfikator produktu> <int cena> <int liczba zakupionych>
+d) python accountant.py konto
+e) python accountant.py magazyn <str identyfikator produktu 1> <str identyfikator produktu 2> <str identyfikator produktu 3> ...
+f) python accountant.py przegląd
