@@ -103,3 +103,18 @@ if len(sys.argv[1]) == 2:
         print("Wychowawca", sys.argv[1], ": ", klasa_wych[sys.argv[1]])
         print("Uczniowie", sys.argv[1], ": ", uczniowie_wg_klas[sys.argv[1]])
         exit()
+
+# wychowawca:
+if sys.argv[1] in wychowawcy_lista:
+    uczniowie_wychowawcy_lst = []
+    if sys.argv[1] in wychowawca.keys():
+        for x in wychowawca[sys.argv[1]]:
+            for uczniowie in uczniowie_wg_klas[x]:
+                uczniowie_wychowawcy_lst.append(uczniowie)
+        print()
+        print("Uczniowie nauczyciela", sys.argv[1], ": ", uczniowie_wychowawcy_lst, end=", ")
+
+# uczeń:
+if sys.argv[1] in uczniowie_klasy_slownik.keys():
+    ttt = uczniowie_klasy_slownik.get(sys.argv[1])
+    print("\nLekcje ucznia", sys.argv[1], "i nauczyciel przedmiotu:", nauczyciel_klasy[ttt])
