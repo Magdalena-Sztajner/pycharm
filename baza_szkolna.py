@@ -42,3 +42,33 @@ while True:
             lista_tmp2.append(pobierz)
             pobierz = input()
         wychowawca[wych_klucz] = lista_tmp2
+
+    if pobierz == "nauczyciel":
+        lista_tmp = []
+        lista_tmp2 = []
+
+        pobierz = input()   #imię nauczyciela
+        naucz_imie = pobierz
+        nauczyciele_lista.append(pobierz)   # dodanie nauczycieli dla sprawdzenia sys.argv
+        lista_tmp2.append(naucz_imie)
+
+        pobierz = input()   # przedmiot nauczyciela
+        lista_tmp.append(pobierz)
+        lista_tmp2.append(pobierz)  #pobieranie przedmiotu nauczyciela
+        lista_tmp2.reverse()
+
+        pobierz = input()
+        while len(pobierz) == 2:
+            if pobierz not in nauczyciel_klasy.keys():
+                lista_tmp.append(pobierz)
+                nauczyciel_klasy[pobierz] = lista_tmp2
+                nauczyciel[naucz_imie] = lista_tmp
+                pobierz = input()
+            if pobierz in nauczyciel_klasy.keys():
+                duplikat_klucz = nauczyciel_klasy[pobierz]
+                lista_duplikat = duplikat_klucz + lista_tmp2
+                nauczyciel_klasy[pobierz] = lista_duplikat
+                lista_tmp.append(pobierz)
+                nauczyciel[naucz_imie] = lista_tmp
+
+                pobierz = input()
