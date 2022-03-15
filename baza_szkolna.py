@@ -118,3 +118,18 @@ if sys.argv[1] in wychowawcy_lista:
 if sys.argv[1] in uczniowie_klasy_slownik.keys():
     ttt = uczniowie_klasy_slownik.get(sys.argv[1])
     print("\nLekcje ucznia", sys.argv[1], "i nauczyciel przedmiotu:", nauczyciel_klasy[ttt])
+
+
+# nauczyciel:
+if sys.argv[1] in nauczyciele_lista:
+    klasy_nauczycieli = nauczyciel[sys.argv[1]]
+    klasy_nauczycieli.pop(0)
+    nauczyciele_lista_lst = []
+    for element in klasy_nauczycieli:
+        if element in klasa_wych:
+            for klasy in klasa_wych[element]:
+                nauczyciele_lista_lst.append(klasy)
+        elif element not in klasa_wych:
+            continue
+    nauczyciele2 = set(nauczyciele_lista_lst)    # usuwa duplikaty z listy (w princie kontynuacja: "list")
+    print("\nWychowawcy klas z którymi ma lekcje nauczyciel", sys.argv[1], ": ", list(nauczyciele2))
