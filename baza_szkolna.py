@@ -9,7 +9,7 @@
 
 import sys
 
-file_path = r"szkola.txt"
+file_path = r"baza_szkolna.txt"
 with open(file_path, "r") as plik:
     for linia in plik:
         wszystko = plik.read()
@@ -42,21 +42,18 @@ while True:
             lista_tmp2.append(pobierz)
             pobierz = input()
         wychowawca[wych_klucz] = lista_tmp2
-
     if pobierz == "nauczyciel":
         lista_tmp = []
         lista_tmp2 = []
 
-        pobierz = input()   #imię nauczyciela
+        pobierz = input()
         naucz_imie = pobierz
-        nauczyciele_lista.append(pobierz)   # dodanie nauczycieli dla sprawdzenia sys.argv
+        nauczyciele_lista.append(pobierz)
         lista_tmp2.append(naucz_imie)
-
-        pobierz = input()   # przedmiot nauczyciela
+        pobierz = input()
         lista_tmp.append(pobierz)
-        lista_tmp2.append(pobierz)  #pobieranie przedmiotu nauczyciela
+        lista_tmp2.append(pobierz)
         lista_tmp2.reverse()
-
         pobierz = input()
         while len(pobierz) == 2:
             if pobierz not in nauczyciel_klasy.keys():
@@ -70,14 +67,12 @@ while True:
                 nauczyciel_klasy[pobierz] = lista_duplikat
                 lista_tmp.append(pobierz)
                 nauczyciel[naucz_imie] = lista_tmp
-
                 pobierz = input()
-
     if pobierz == "uczen":
         tmp = []
         uczen_imie = input()
         uczen_klasa = input()
-        uczniowie_lista.append(uczen_imie)  #dodanie ucznia do listy wszystkich uczniów (do sys.argv)
+        uczniowie_lista.append(uczen_imie)
         tmp.append(uczen_imie)
         uczniowie_klasy_slownik[uczen_imie] = uczen_klasa
         if uczen_klasa not in uczniowie_wg_klas.keys():
@@ -86,12 +81,10 @@ while True:
             lista_uczniow_w_klasie = uczniowie_wg_klas[uczen_klasa]
             dodanie_do_klasy = lista_uczniow_w_klasie + tmp
             uczniowie_wg_klas[uczen_klasa] = dodanie_do_klasy
-
         pobierz = input()
         if pobierz == "koniec":
             break
 
-# klasa:
 if len(sys.argv[1]) == 2:
     if sys.argv[1] not in klasa_wych.keys():
         print()
@@ -104,7 +97,6 @@ if len(sys.argv[1]) == 2:
         print("Uczniowie", sys.argv[1], ": ", uczniowie_wg_klas[sys.argv[1]])
         exit()
 
-# wychowawca:
 if sys.argv[1] in wychowawcy_lista:
     uczniowie_wychowawcy_lst = []
     if sys.argv[1] in wychowawca.keys():
@@ -114,13 +106,10 @@ if sys.argv[1] in wychowawcy_lista:
         print()
         print("Uczniowie nauczyciela", sys.argv[1], ": ", uczniowie_wychowawcy_lst, end=", ")
 
-# uczeń:
 if sys.argv[1] in uczniowie_klasy_slownik.keys():
     ttt = uczniowie_klasy_slownik.get(sys.argv[1])
     print("\nLekcje ucznia", sys.argv[1], "i nauczyciel przedmiotu:", nauczyciel_klasy[ttt])
 
-
-# nauczyciel:
 if sys.argv[1] in nauczyciele_lista:
     klasy_nauczycieli = nauczyciel[sys.argv[1]]
     klasy_nauczycieli.pop(0)
@@ -131,5 +120,5 @@ if sys.argv[1] in nauczyciele_lista:
                 nauczyciele_lista_lst.append(klasy)
         elif element not in klasa_wych:
             continue
-    nauczyciele2 = set(nauczyciele_lista_lst)    # usuwa duplikaty z listy (w princie kontynuacja: "list")
+    nauczyciele2 = set(nauczyciele_lista_lst)
     print("\nWychowawcy klas z którymi ma lekcje nauczyciel", sys.argv[1], ": ", list(nauczyciele2))
