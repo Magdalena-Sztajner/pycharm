@@ -72,3 +72,22 @@ while True:
                 nauczyciel[naucz_imie] = lista_tmp
 
                 pobierz = input()
+
+    if pobierz == "uczen":
+        tmp = []
+        uczen_imie = input()
+        uczen_klasa = input()
+        uczniowie_lista.append(uczen_imie)  #dodanie ucznia do listy wszystkich uczniów (do sys.argv)
+        tmp.append(uczen_imie)
+        uczniowie_klasy_slownik[uczen_imie] = uczen_klasa
+        if uczen_klasa not in uczniowie_wg_klas.keys():
+            uczniowie_wg_klas[uczen_klasa] = tmp
+        elif uczen_klasa in uczniowie_wg_klas.keys():
+            lista_uczniow_w_klasie = uczniowie_wg_klas[uczen_klasa]
+            dodanie_do_klasy = lista_uczniow_w_klasie + tmp
+            uczniowie_wg_klas[uczen_klasa] = dodanie_do_klasy
+
+        pobierz = input()
+        if pobierz == "koniec":
+            break
+
