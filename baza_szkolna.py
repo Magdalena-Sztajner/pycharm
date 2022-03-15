@@ -91,3 +91,15 @@ while True:
         if pobierz == "koniec":
             break
 
+# klasa:
+if len(sys.argv[1]) == 2:
+    if sys.argv[1] not in klasa_wych.keys():
+        print()
+        print("Klasa", sys.argv[1], "nie ma wychowawcy")
+        print("Uczniowie", sys.argv[1], ": ", uczniowie_wg_klas[sys.argv[1]])
+        exit()
+    elif sys.argv[1] in uczniowie_klasy_slownik.values():
+        print()
+        print("Wychowawca", sys.argv[1], ": ", klasa_wych[sys.argv[1]])
+        print("Uczniowie", sys.argv[1], ": ", uczniowie_wg_klas[sys.argv[1]])
+        exit()
