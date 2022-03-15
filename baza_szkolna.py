@@ -27,3 +27,18 @@ wychowawcy_lista = []
 nauczyciele_lista = []
 uczniowie_lista = []
 uczniowie_klasy_slownik = {}
+
+while True:
+    if pobierz == "wychowawca":
+        lista_tmp = []
+        lista_tmp2 = []
+        pobierz = input()
+        wychowawcy_lista.append(pobierz)
+        lista_tmp.append(pobierz)
+        wych_klucz = pobierz
+        pobierz = input()
+        while len(pobierz) == 2:
+            klasa_wych[pobierz] = lista_tmp
+            lista_tmp2.append(pobierz)
+            pobierz = input()
+        wychowawca[wych_klucz] = lista_tmp2
