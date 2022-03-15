@@ -122,3 +122,4 @@ if sys.argv[1] in nauczyciele_lista:
             continue
     nauczyciele2 = set(nauczyciele_lista_lst)
     print("\nWychowawcy klas z którymi ma lekcje nauczyciel", sys.argv[1], ": ", list(nauczyciele2))
+
