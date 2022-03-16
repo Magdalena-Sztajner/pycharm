@@ -11,8 +11,7 @@ import sys
 
 file_path = r"baza_szkolna.txt"
 with open(file_path, "r") as plik:
-    for linia in plik:
-        wszystko = plik.read()
+    wszystko = plik.read().split("\n")
 if sys.argv[1] not in wszystko:
     print("Nie znaleziono w bazie")
     exit()
