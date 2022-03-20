@@ -1,0 +1,22 @@
+saldo
+10000
+wplata poczatkowa
+zakup
+laptop
+2000
+1
+zakup
+myszki
+100
+5
+zakup
+monitor
+900
+2
+saldo
+-1000
+podatek
+sprzedaz
+myszki
+150
+2

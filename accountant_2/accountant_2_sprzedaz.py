@@ -42,12 +42,13 @@ if sys.argv[2] == "sprzedaz":
 
     saldo = saldo + (cena * szt)
 
-print()
-print()
-for element in historia:
-    print(element)
 
 
+# print()
+# print()
+# for element in historia:
+#     print(element)
+#
 
 # print()
 # print("Saldo:", saldo)
