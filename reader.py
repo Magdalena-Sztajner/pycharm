@@ -26,3 +26,28 @@ else:
         print()
         print("Podana ścieżka nie istnieje")
         exit()
+
+if os.path.isdir(sciezka_zapis):
+    pass
+
+else:
+    try:    ## potrzebne try?
+        print("Ścieżka do zapisu nie istnieje")
+        print()
+        print(F"Utworzyć [{zapisz_jako}] ?")
+        tworzenie_sciezki = input("Tak/Nie""\n")    #stdin?
+
+        if tworzenie_sciezki in ["Tak", "tak"]:
+            os.makedirs(sciezka_zapis)
+            print(F"Ścieżka {sciezka_zapis} została utworzona")
+        elif tworzenie_sciezki in ["Nie", "nie"]:
+            exit()
+        else:
+            print("Nieprawidłowa komenda")
+            exit()
+
+    except:
+        print()
+        print("Błędna ścieżka do zapisu")
+        exit()
+
