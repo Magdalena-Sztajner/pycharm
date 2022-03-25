@@ -59,3 +59,46 @@ def odczytaj_plik():
             lista_tmp.append(linia)
     lista_tmp[wiersz][kolumna] = wartosc
 
+if zapisz_jako.endswith(".csv"):    # endswith sprawdza rozszerzenie pliku
+    odczytaj_plik()
+
+    with open(zapisz_jako, "w", newline='') as plik:    #newline= zapobiega pustym enterom przy zapisywaniu
+        writer = csv.writer(plik)
+        writer.writerows(lista_tmp)
+
+    print()
+    with open(zapisz_jako, "r") as plik:
+        for linia in csv.reader(plik):
+            print(linia)
+    print()
+    exit()
+
+elif zapisz_jako.endswith(".json"):
+    odczytaj_plik()
+
+    with open(zapisz_jako, "w") as plik:
+        json.dump(lista_tmp, plik)
+
+    print()
+    with open(zapisz_jako, "r") as plik:
+        for linia in json.load(plik):
+            print(linia)
+    print()
+    exit()
+
+elif zapisz_jako.endswith(".pickle"):
+    odczytaj_plik()
+
+    with open(zapisz_jako, "wb") as plik:
+        pickle.dump(lista_tmp, plik)
+
+    print()
+    with open(zapisz_jako, "rb") as plik:
+        print()
+        for linia in pickle.load(plik):
+            print(linia)
+    print()
+    exit()
+else:
+    print()
+    print("Nieprawidłowe rozszerzenie pliku (.csv/.json/.pickle) \n  Plik nie został utworzony")
