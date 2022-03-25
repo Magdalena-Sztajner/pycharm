@@ -12,3 +12,17 @@ wartosc = sys.argv[5]
 
 sciezka_odczyt = os.path.dirname(wczytaj_csv)   # bez slasza: c:\users\mrc22\desktop, ze slaszem: ...\desktop\python
 sciezka_zapis = os.path.dirname(zapisz_jako)
+
+if os.path.isfile(wczytaj_csv): #sprawdzenie, czy istnieje plik do odczytu
+    pass
+else:
+    if os.path.isdir(sciezka_odczyt):      #nie można dać do środka wczytaj_csv
+        print()
+        print(F"Podany plik nie istnieje. Zawartość katalogu [{sciezka_odczyt}]:",
+                      "\n", os.listdir(sciezka_odczyt))
+        print()
+        exit()
+    elif not os.path.isdir(sciezka_odczyt):
+        print()
+        print("Podana ścieżka nie istnieje")
+        exit()
