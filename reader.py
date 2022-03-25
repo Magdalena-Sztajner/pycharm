@@ -51,3 +51,11 @@ else:
         print("Błędna ścieżka do zapisu")
         exit()
 
+lista_tmp = []
+def odczytaj_plik():
+    global lista_tmp
+    with open(wczytaj_csv, "r") as plik:
+        for linia in csv.reader(plik):
+            lista_tmp.append(linia)
+    lista_tmp[wiersz][kolumna] = wartosc
+
