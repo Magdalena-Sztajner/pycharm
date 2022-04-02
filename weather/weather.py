@@ -1,10 +1,12 @@
-# OPEN WEATHER:
+'''''''''
+OPEN WEATHER (for 7 days):
+https://openweathermap.org/api/one-call-api
 
-import pprint
+'''''''''
+
 import requests
 from datetime import datetime, timedelta
 import json
-import csv
 import sys
 import os
 
@@ -38,6 +40,7 @@ if os.stat("historia_pogody.json").st_size > 0:
 
 else:
     print("Wysyłam zapytanie...")
+
 odpowiedz = requests.get(API_url)
 # pprint.pprint(odpowiedz.json())             # pprint.pprint(odpowiedz.json()["list"][3]["weather"])
 zapytanie = odpowiedz.json()  # zapytanie = odpowiedz.json()["list"][1]["weather"]
