@@ -38,3 +38,22 @@ if os.stat("historia_pogody.json").st_size > 0:
 
 else:
     print("Wysyłam zapytanie...")
+odpowiedz = requests.get(API_url)
+# pprint.pprint(odpowiedz.json())             # pprint.pprint(odpowiedz.json()["list"][3]["weather"])
+zapytanie = odpowiedz.json()  # zapytanie = odpowiedz.json()["list"][1]["weather"]
+
+for dane in zapytanie["daily"]:
+    data_format = datetime.fromtimestamp(dane["dt"]).date()  # przeszukiwanie po dacie
+    dzien = str(data_format)  # zmiana formatu
+    if dzien == data_argv:
+        rain = dane.get("rain")
+        if rain:
+            print(F"{data_argv}: pada")
+            pogoda[dzien] = ["pada"]
+        else:
+            pogoda[dzien] = ["nie pada"]
+            print(F"{data_argv}: nie pada")
+
+if data_argv not in pogoda:
+    print("Brak informacji")
+    exit()
