@@ -57,3 +57,14 @@ for dane in zapytanie["daily"]:
 if data_argv not in pogoda:
     print("Brak informacji")
     exit()
+try:
+    with open("historia_pogody.json", "r") as plik:
+        aktualizacja_slownika = json.load(plik) # wypakowaywanie słownika z pliku i aktualizowanie o dane ze słownika "pogoda"
+        aktualizacja_slownika.update(pogoda)
+
+    with open("historia_pogody.json", "w") as plik:  # zapisywanie uaktualniownego słownika do pliku
+        json.dump(aktualizacja_slownika, plik, sort_keys=True, indent=4, separators=(',', ': '))
+
+except:
+    with open("historia_pogody.json", "w") as plik:
+        json.dump(pogoda, plik, sort_keys=True, indent=4, separators=(',', ': '))
