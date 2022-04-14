@@ -1,4 +1,5 @@
 '''''''''
+
     wf[date] da odpowiedź na temat pogody dla podanej daty (według specyfikacji z poprzedniego zadania)
     wf.items() zwróci generator tupli w formacie (data, pogoda) dla już zcache’owanych rezultatów przy wywołaniu
     wf to iterator zwracający wszystkie daty, dla których znana jest pogoda
