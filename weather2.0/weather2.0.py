@@ -90,3 +90,20 @@ class WeatherForecast():
             pogoda_historia = json.load(plik)
             for x,y in pogoda_historia.items():
                 yield x,y
+
+
+
+wf = WeatherForecast()
+
+
+
+# # 1:
+# for dane in wf:
+#     print(dane)
+
+# # 2:
+# print(wf["2022-04-17"])
+
+# # 3:
+# for data in wf.items():
+#     print(data)
