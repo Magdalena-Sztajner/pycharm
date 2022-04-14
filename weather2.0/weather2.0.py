@@ -84,3 +84,9 @@ class WeatherForecast():
         if podany_dzien not in dzien:
             print("Brak informacji dla podanej daty")
             exit()
+
+    def items(self):
+        with open("historia_pogody.json", "r") as plik:
+            pogoda_historia = json.load(plik)
+            for x,y in pogoda_historia.items():
+                yield x,y
