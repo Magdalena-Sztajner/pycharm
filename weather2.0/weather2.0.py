@@ -5,12 +5,10 @@
 
 '''''''''
 
-
 import os
 import json
 import requests
 from datetime import datetime
-
 
 
 class WeatherForecast():
@@ -39,7 +37,6 @@ class WeatherForecast():
         except:
             with open("historia_pogody.json", "w") as plik:
                 json.dump(pogoda_, plik, sort_keys=True, indent=4, separators=(',', ': '))
-
 
     def __iter__(self):
             for x in self.zapytanie["daily"]:
@@ -92,9 +89,7 @@ class WeatherForecast():
                 yield x,y
 
 
-
 wf = WeatherForecast()
-
 
 
 # # 1:
@@ -102,7 +97,7 @@ wf = WeatherForecast()
 #     print(dane)
 
 # # 2:
-# print(wf["2022-04-17"])
+# print(wf["2022-04-16"])
 
 # # 3:
 # for data in wf.items():
