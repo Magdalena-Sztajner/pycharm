@@ -39,3 +39,48 @@ class WeatherForecast():
         except:
             with open("historia_pogody.json", "w") as plik:
                 json.dump(pogoda_, plik, sort_keys=True, indent=4, separators=(',', ': '))
+
+
+    def __iter__(self):
+            for x in self.zapytanie["daily"]:
+             data_format = datetime.fromtimestamp(x["dt"]).date()
+             dzien = str(data_format)
+             if not dzien:
+              break
+             else:
+              yield dzien
+
+    def __getitem__(self, podany_dzien):
+
+        if os.stat("historia_pogody.json").st_size > 0:
+            print("Sprawdzam historię...")
+            with open("historia_pogody.json", "r") as plik:
+                sprawdzenie_historii = json.load(plik)
+                wyszukiwanie = sprawdzenie_historii.get(podany_dzien)
+                if wyszukiwanie:
+                    print(F"{podany_dzien}: {wyszukiwanie}")
+                    exit()
+                else:
+                    print("Wysyłam zapytanie...")
+        else:
+            print("Wysyłam zapytanie...")
+
+        for x in self.zapytanie["daily"]:
+            data_format = datetime.fromtimestamp(x["dt"]).date()
+            dzien = str(data_format)
+
+            if podany_dzien == dzien:
+                rain = x.get("rain")
+                if rain:
+                    self.pogoda[dzien] = ["pada"]
+                    self.historia_zapis()
+                    return (F"{podany_dzien}: pada")
+
+                else:
+                    self.pogoda[dzien] = ["nie pada"]
+                    self.historia_zapis()
+                    return (F"{podany_dzien}: nie pada")
+
+        if podany_dzien not in dzien:
+            print("Brak informacji dla podanej daty")
+            exit()
