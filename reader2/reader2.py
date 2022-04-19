@@ -1,19 +1,11 @@
-import os
-import sys
 import csv
 import json
 import pickle       # reader.py <src> <dst> <change1> <change2> ...
 
-from reader2 import Zmienne
-
-from read2_ispath import IsPath
-
-
-
+from reader2_zmienne import Zmienne
+from reader2_ispath import  IsPath
 IsPath()
-
-from read2_OdczytCSV import OdczytCSV
-
+from reader2_OdczytCSV import OdczytCSV
 
 
 class ZapiszWyswietlCSV(OdczytCSV):
@@ -56,7 +48,6 @@ class ZapiszWyswietlPICKLE(OdczytCSV):
                 print(linia)
         exit()
 
-
 zmienne = Zmienne()
 
 if zmienne.zapisz_jako.endswith(".csv"):
@@ -73,5 +64,3 @@ elif zmienne.zapisz_jako.endswith(".pickle"):
 
 else:
     print("Nieprawidłowe rozszerzenie pliku (.csv/.json/.pickle) \n  Plik nie został utworzony")
-
-print()

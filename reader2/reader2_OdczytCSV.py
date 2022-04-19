@@ -1,5 +1,5 @@
 import csv
-from read2_zmienne import Zmienne
+from reader2_zmienne import Zmienne
 
 class OdczytCSV(Zmienne):
     def __init__(self):

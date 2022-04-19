@@ -1,7 +1,5 @@
-import sys
 import os
-from read2_zmienne import Zmienne
-
+from reader2_zmienne import Zmienne
 
 class IsPath(Zmienne):
     def __init__(self):
