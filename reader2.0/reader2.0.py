@@ -57,3 +57,21 @@ class ZapiszWyswietlPICKLE(OdczytCSV):
         exit()
 
 
+zmienne = Zmienne()
+
+if zmienne.zapisz_jako.endswith(".csv"):
+    x = ZapiszWyswietlCSV()
+    x.plik_CSV()
+
+elif zmienne.zapisz_jako.endswith(".json"):
+    x = ZapiszWyswietlJSON()
+    x.plik_JSON()
+
+elif zmienne.zapisz_jako.endswith(".pickle"):
+    x = ZapiszWyswietlPICKLE()
+    x.plik_PICKLE()
+
+else:
+    print("Nieprawidłowe rozszerzenie pliku (.csv/.json/.pickle) \n  Plik nie został utworzony")
+
+print()
