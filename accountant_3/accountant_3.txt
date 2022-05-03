@@ -1,0 +1,18 @@
+saldo
+10000
+wplata poczatkowa
+saldo
+500
+zwrot
+zakup
+laptop
+2000
+2
+zakup
+dysk ssd
+300
+3
+sprzedaz
+laptop
+3000
+1
