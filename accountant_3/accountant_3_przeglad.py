@@ -1,7 +1,7 @@
 import sys
-import acc3
+import accountant_3_historia
 
-from acc3 import historia
+from accountant_3_historia import historia
 
 def prze():
     if sys.argv[2] == "historia":
@@ -23,7 +23,7 @@ def prze():
             print("Przeglad historii:", historia[przeglad_od])
             print()
 
-import man
+import accountant_3_Manager
 
 
 

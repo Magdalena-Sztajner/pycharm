@@ -1,13 +1,13 @@
 import sys
 # import acc3
 
-from acc3 import historia, magazyn, dodawanie_historii, saldo, hist_tmp
+from accountant_3_historia import historia, magazyn, dodawanie_historii
 
 
 # dozwolone_komendy()
 
 def zak():
-    from acc3 import saldo, hist_tmp
+    from accountant_3_historia import saldo, hist_tmp
     produkt = sys.argv[3]
     cena = int(sys.argv[4])
     szt = int(sys.argv[5])
@@ -40,7 +40,7 @@ def zak():
         magazyn[produkt] = ilosc_szt
 
 
-import man
+import accountant_3_Manager
 
 
 # print()

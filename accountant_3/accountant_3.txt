@@ -10,9 +10,13 @@ laptop
 2
 zakup
 dysk ssd
-300
-3
+500
+2
 sprzedaz
 laptop
 3000
+1
+sprzedaz
+dysk ssd
+1000
 1

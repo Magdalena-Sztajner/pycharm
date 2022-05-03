@@ -4,22 +4,16 @@
 <plik.py> <plik.txt> <akcja> <zakres1> <zakres2>(opcjonalnie) (dla przegląd)
 <plik.py> <plik.txt> <akcja> <przedmiot> <cena> <szt.> (dla zakup, sprzedaż)
 
-python acc3_sal.py acc3.txt saldo 500 zwrot
-python acc3_zak.py acc3.txt zakup laptop 2000 2
-python acc3_sprz.py acc3.txt sprzedaz laptop 3000 1
-python acc3_mag.py acc3.txt stan  
-python acc3_prze.py acc3.txt przeglad 0 2
 '''''''''
 
-
 import sys
-import acc3
-from acc3_sal import sal
-from acc3_zak import zak
-from acc3_sprz import sprz
-from acc3_kon import kon
-from acc3_mag import mag
-from acc3_prze import prze
+import accountant_3_historia
+from accountant_3_saldo import sal
+from accountant_3_zakup import zak
+from accountant_3_sprzedaz import sprz
+from accountant_3_konto import kon
+from accountant_3_magazyn import mag
+from accountant_3_przeglad import prze
 
 
 
@@ -79,21 +73,5 @@ def stan(menedzer):
 
 menedzer.execute(sys.argv[2])
 
-
-# menedzer.actions = {
-#     "saldo":sal,
-#     "zakup":zak,
-#     "konto":kon,
-#     "magazyn":mag,
-#     "stan":mag,
-#     "przeglad":prze,
-# }
-
-from acc3 import historia, saldo
-#
-# for element in historia:
-#     print(element)
-
-# print(saldo, historia)
 
 

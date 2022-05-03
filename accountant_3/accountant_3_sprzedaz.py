@@ -1,11 +1,11 @@
 import sys
-import acc3
+import accountant_3_historia
 
-from acc3 import dodawanie_historii, historia, magazyn
+from accountant_3_historia import dodawanie_historii, historia, magazyn
 
 
 def sprz():
-    from acc3 import hist_tmp, saldo
+    from accountant_3_historia import hist_tmp, saldo
     if sys.argv[2] == "sprzedaz":
         produkt = sys.argv[3]
         cena = int(sys.argv[4])
@@ -49,7 +49,7 @@ def sprz():
     #     print(element)
 
 
-import man
+import accountant_3_Manager
 
 # print()
 # print("Saldo:", saldo)

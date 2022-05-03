@@ -1,7 +1,7 @@
 import sys
-import acc3
+import accountant_3_historia
 
-from acc3 import saldo
+from accountant_3_historia import saldo
 
 def kon():
     if sys.argv[2] == "konto":
@@ -9,4 +9,4 @@ def kon():
         print("Konto:", saldo)
         print()
 
-import man
+import accountant_3_Manager

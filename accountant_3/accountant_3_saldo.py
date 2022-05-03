@@ -1,13 +1,13 @@
 import sys
 
-import acc3
-from acc3 import hist_tmp, historia, dodawanie_historii
+import accountant_3_historia
+from accountant_3_historia import hist_tmp, historia, dodawanie_historii
 
 
 
 
 def sal():
-    from acc3 import saldo, hist_tmp
+    from accountant_3_historia import saldo, hist_tmp
     kwota = int(sys.argv[3])
     komentarz = sys.argv[4]
     hist_tmp.append(sys.argv[2])
@@ -24,7 +24,7 @@ def sal():
 
 
 
-import man
+import accountant_3_Manager
 
 
 

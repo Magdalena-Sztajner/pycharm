@@ -1,8 +1,8 @@
 
 
 import sys
-import acc3
-from acc3 import magazyn
+import accountant_3_historia
+from accountant_3_historia import magazyn
 
 def mag():
     if sys.argv[2] == "magazyn":
@@ -16,4 +16,4 @@ def mag():
             print(k, v)
 
 
-import man
+import accountant_3_Manager
