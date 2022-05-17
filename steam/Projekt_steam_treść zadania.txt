@@ -1,0 +1,12 @@
+Mini przeglądarka gier Steam
+
+Ściągnij dane z:
+https://steam.internet.byu.edu/
+
+Stwórz stronę internetową (katalog) który pozwoli na przejrzenie gier. Strona powinna umożliwić:
+
+-filtrowanie wg ceny:rodzaj filtrowania 
+
+-filtrowanie wg kategorii gry (genre)
+-sortowanie wg ceny (rosnąco/malejąco)
+-sortowanie wg ratingu (rosnąco/malejąco)
