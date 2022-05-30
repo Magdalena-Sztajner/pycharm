@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if name %}
+    {% for message in get_flashed_messages() %}
+  <center>
+    <div class="alert alert-success alert-dismissible fade show " role="alert" style="width: 50%">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </center>
+
+{% endfor %}
+
+  <h2>Game added successfully</h2>
+  <br/><br/><br/><br/>
+
+  <table class="table table-hover table-bordered table-striped">
+  {% for game in list_of_games %}
+    <tr>
+    <td>{{ game.id }}. {{ game.name}} - {{ game.genre }} - {{ game.rating }}% - ${{ game.price }} </td>
+    </tr>
+  {% endfor %}
+  </table>
+    <br/><br/>
+
+  {% else %}
+    {% for message in get_flashed_messages() %}
+  <center>
+    <div class="alert alert-warning alert-dismissible fade show " role="alert" style="width: 35%">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </center>
+
+{% endfor %}
+
+    <style>h2 {text-align: center;}</style>
+    <h2><b>add game:</b></h2>
+    <br/>
+
+  <div class="mx-auto" style="width: 400px;">
+  <div class="shadow p-3 mb-5 bg-body rounded">
+
+    <form method="POST" >
+      {{ form.hidden_tag() }}
+    <div style="width: 100%">
+      <b>
+      {{ form.name.label(class="form-label") }}
+      {{ form.name(class="form-control") }}
+      <br/>
+      {{ form.genre.label(class="form-label") }}
+      {{ form.genre(class="form-control") }}
+      <br/>
+      {{ form.rating.label(class="form-label") }} (%)
+      {{ form.rating(class="form-control") }}
+      <br/>
+      {{ form.price.label(class="form-label") }} ($)
+      {{ form.price(class="form-control") }}
+      <br/></b>
+    </div>
+      {{ form.submit(class="btn btn-secondary") }}  <button class="btn btn-primary" onclick="document.location='{{url_for('index')}}'
+                                                      " style="margin-left: 203px;">Go back</button>
+    </form>
+    </div>
+  </div>
+
+  <br/><br/><br/>
+
+  <table class="table table-hover table-bordered table-striped">
+  {% for game in list_of_games %}
+    <tr>
+    <td>{{ game.id }}. {{ game.name}} - {{ game.genre }} - {{ game.rating }}% - ${{ game.price}}  </td>
+    </tr>
+  {% endfor %}
+  </table>
+  {% endif %}
+
+{% endblock %}
+
