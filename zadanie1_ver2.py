@@ -12,3 +12,7 @@ for i in range(12):
     mniej_0 = round(pozyczka - do_splaty_lacznie)
     # pozyczka -= mniej_0
     pozyczka = do_splaty_lacznie
+
+    template = (
+        f"W {miesiac} do splaty: {do_splaty_lacznie},  to mniej o: {mniej_0}")
+    print(template)
