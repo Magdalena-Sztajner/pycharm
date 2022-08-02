@@ -44,3 +44,23 @@ for i in range(numer):
             max_liczba_dni = m3_dni_pracy
 
 
+lacznie_czas_naprawy += czas_naprawy
+
+        dyspozycyjnosc_wszystkich_mechanikow = (m1_dni_pracy + m2_dni_pracy + m3_dni_pracy) + 1
+        lista_dyspozz = min(lista_dyspo)
+        mechanik_najszybciej_dostepny = lista_dyspozz + 1
+
+
+
+tmp =  (f"Czas pracy mechanika 1: {m1_godziny}, Czas pracy mechanika 2: {m2_godziny}, Czas pracy mechanika 3: {m3_godziny}")
+tmp1 = (f"Dni pracy mechanika 1: {m1_dni_pracy}, Dni pracy mechanika 2: {m2_dni_pracy}, Dni pracy mechanika 3: {m3_dni_pracy}")
+
+print(tmp)
+print(f"Liczba zlecen: , {liczba_zlecen}, Czas wykonania zlecen: "
+          f"{lacznie_czas_naprawy}, {tmp1}")
+print(f"Wszyscy mechanicy beda wolni za: {max_liczba_dni + 1}, "
+          f"Najszybciej bedzie wolny mechanik: {lista_dyspozz}")
+
+
+print(f"Wszyscy mechanicy beda wolni za: {max_liczba_dni + 1}, "
+          f"Najbliższy mechanik będzie wolny w ciągu: {mechanik_najszybciej_dostepny} dni")
