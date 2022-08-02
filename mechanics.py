@@ -12,3 +12,9 @@ max_liczba_dni = 0
 numer_kolejnych_zlecenia = 0
 numer_zlecenia = 1
 lista_dyspo = []
+
+liczba_zlecen = int(input("Ile jest samochodów do naprawy? "))
+numer = liczba_zlecen
+for i in range(numer):
+        numer_kolejnych_zlecenia += numer_zlecenia
+        czas_naprawy = int(input(f"Ile czasu zajmie naprawa nr {numer_kolejnych_zlecenia}? : "))
