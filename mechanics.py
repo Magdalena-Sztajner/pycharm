@@ -46,9 +46,9 @@ for i in range(numer):
 
 lacznie_czas_naprawy += czas_naprawy
 
-        dyspozycyjnosc_wszystkich_mechanikow = (m1_dni_pracy + m2_dni_pracy + m3_dni_pracy) + 1
-        lista_dyspozz = min(lista_dyspo)
-        mechanik_najszybciej_dostepny = lista_dyspozz + 1
+dyspozycyjnosc_wszystkich_mechanikow = (m1_dni_pracy + m2_dni_pracy + m3_dni_pracy) + 1
+lista_dyspozz = min(lista_dyspo)
+mechanik_najszybciej_dostepny = lista_dyspozz + 1
 
 
 
